@@ -36,13 +36,14 @@ const Navbar = () => {
                 )}
               </div>
             </div>
-            <div className="absolute inset-y-0 right-0 flexs items-center pr-2 sm:static sm: inset-auto">
-              <ConnectButton
-                client={client}
-                theme={lightTheme()}
-                detailsButton={{ style: { maxHeight: "50px" } }}
-              />
-            </div>
+          </div>
+
+          <div className="absolute inset-y-0 right-0 flexs items-center pr-2 sm:static sm: inset-auto">
+            <ConnectButton
+              client={client}
+              theme={lightTheme()}
+              detailsButton={{ style: { maxHeight: "50px" } }}
+            />
           </div>
         </div>
       </div>
