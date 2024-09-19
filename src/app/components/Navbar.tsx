@@ -2,7 +2,8 @@
 import Image from "next/image";
 import thirdWebIcon from "@public/thirdweb.svg";
 import Link from "next/link";
-import { useActiveAccount } from "thirdweb/react";
+import { ConnectButton, lightTheme, useActiveAccount } from "thirdweb/react";
+import { client } from "../client";
 const Navbar = () => {
   const account = useActiveAccount();
   return (
@@ -26,7 +27,21 @@ const Navbar = () => {
                     Campaigns
                   </p>
                 </Link>
+                {account && (
+                  <Link href={`/dashboard/${account?.address}`}>
+                    <p className="rounded-md px-3 py-2 text-sm font-medium text-slate-700">
+                      Dashboard
+                    </p>
+                  </Link>
+                )}
               </div>
+            </div>
+            <div className="absolute inset-y-0 right-0 flexs items-center pr-2 sm:static sm: inset-auto">
+              <ConnectButton
+                client={client}
+                theme={lightTheme()}
+                detailsButton={{ style: { maxHeight: "50px" } }}
+              />
             </div>
           </div>
         </div>
