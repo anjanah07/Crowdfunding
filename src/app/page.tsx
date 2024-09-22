@@ -5,7 +5,7 @@ import { client } from "./client";
 import { sepolia } from "thirdweb/chains";
 import { CROWDFUNDING_FACTORY } from "./constants/contract";
 import { useReadContract } from "thirdweb/react";
-import CampaignCard from "./components/CampaignCard";
+import CampaignCard from "../components/CampaignCard";
 
 export default function Home() {
   const contract = getContract({
