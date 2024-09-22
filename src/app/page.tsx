@@ -29,13 +29,12 @@ export default function Home() {
           {!isLoading &&
             campaigns &&
             (campaigns?.length > 0 ? (
-              <div>
-                {campaigns.map((campaign, index) => (
-                  <div key={index}>
-                    <CampaignCard campaignAddress={campaign.campaignAddress} />
-                  </div>
-                ))}
-              </div>
+              campaigns.map((campaign, index) => (
+                <CampaignCard
+                  key={campaign.campaignAddress}
+                  campaignAddress={campaign.campaignAddress}
+                />
+              ))
             ) : (
               <div>No Campaigns</div>
             ))}
