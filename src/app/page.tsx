@@ -5,6 +5,7 @@ import { client } from "./client";
 import { sepolia } from "thirdweb/chains";
 import { CROWDFUNDING_FACTORY } from "./constants/contract";
 import { useReadContract } from "thirdweb/react";
+import CampaignCard from "./components/CampaignCard";
 
 export default function Home() {
   const contract = getContract({
@@ -31,7 +32,7 @@ export default function Home() {
               <div>
                 {campaigns.map((campaign, index) => (
                   <div key={index}>
-                    <p>{campaign.name}</p>
+                    <CampaignCard campaignAddress={campaign.campaignAddress} />
                   </div>
                 ))}
               </div>
