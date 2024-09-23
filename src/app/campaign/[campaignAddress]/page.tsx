@@ -1,3 +1,4 @@
+"use client";
 import { client } from "@/app/client";
 import { useParams } from "next/navigation";
 import React from "react";
